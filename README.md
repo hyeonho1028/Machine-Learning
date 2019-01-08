@@ -9,3 +9,4 @@
 
 
 [머신러닝](https://wikidocs.net/4694#k-means-for-a-later-purpose)
+[머신러닝](http://sanghyukchun.github.io/69/)
