@@ -5,3 +5,7 @@
   2. Classification
 
 #### 패턴인식과 머신러닝 - 패턴인식과 머신러닝
+
+
+
+[머신러닝](https://wikidocs.net/4694#k-means-for-a-later-purpose)
