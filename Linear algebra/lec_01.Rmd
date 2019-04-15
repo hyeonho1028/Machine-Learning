@@ -1,0 +1,183 @@
+---
+title: "linear algebra"
+author: "hyeonho lee"
+date: "2018년 12월 18일"
+output:
+  pdf_document:
+    toc: true
+    latex_engine: xelatex
+  html_document: default
+  word_document:
+    highlight: tango
+mainfont: NanumGothic
+header-includes :
+  - \usepackage{kotex}
+  - \usepackage{setspace}
+  - \usepackage{booktabs}
+---
+
+\newpage
+
+# 1 vector
+벡터는 2차원 이상의 값을 가질 수 있다.\
+$\vec{v}=(5,0)=\begin{bmatrix} 5\\ 0 \end{bmatrix}$\
+$\vec{a}=\begin{bmatrix} 3\\ 4 \end{bmatrix}$, 벡터의 길이를 구할 수 있다.\
+또한 실수공간 좌표를 $R^2=real\;\; coordinate\;\;space$로 표현하기도 한다.\
+$two\;\;dimensional$이라고도 한다.\
+$R^3=3D\;\;real\;\;coordinate\;\;space$ : 3-tuples
+
+## vector의 연산
+원점을 꼭 vector의 꼬리로 둘 필요는 없다.
+
+덧의 경우 차원이 같으면 그냥 하면 된다. vector b의 꼬리를 vector a의 머리에 두는 것이 +연산이 라고 할 수 있다. 교환법칙은 성립한다. visual적으로도 개념적으로 이해...
+
+스칼라와의 곱\
+마찬가지로 곱하면 된다. 단, visual, 개념적으로 이해하면 매우 좋다.\
+scalar(스칼라)와 scale up(확대하다)의 어원이 같다.\
+스칼라의 곱은 벡터를 확대화한다.\
+negative scalar을 곱하면 vector의 방향이 바뀐다.\
+
+뺄셈의 경우\
+vector a의 꼬리에서 vector b의 꼬리가 시작된다.
+
+## 단위벡터(=unit vector)
+unit vector의 경우 $\vec{a}$대신에 $\hat{a}$를 사용한다.\
+2차원이라고 가정하면, 주로 $\hat{i}$가 수평방향 즉 단위벡터 i라고 하고  $\hat{j}$가 수직방향 단위벡터 j라고 한다.\
+따라서 vector v는 $2\hat{i}+3\hat{j}$라고 할 수 도있다.\
+$\vec{v}=\begin{bmatrix} 2\\ 3 \end{bmatrix}$
+
+## 직선의 매개변수
+t라는 매개변수를 사용하여 다차원의 식들을 선형대수학스러운, 간단하게 표현 할 수 있다.
+
+
+\newpage
+# 2 선형결합과 생성(=linear combination)
+선형결합이란 단순히 다 더하라는 의미이다.\
+선형결합은 상수배를 한후, vector끼리 더하는 연산이다. 선형의 말이 붙는 이유는 상수배를 하기 때문이다.\
+(2차원일때)어떠한 vector를 만든다면 2개의 벡터의 선형결합으로 만들 수 있다.\
+
+# 3 선형종속과 독립
+
+## 선형독립이란(linear independence)
+한 벡터에 대한 스칼라 결합이 가능하다... 이것은 선형종속이다 라고 말 한다.\
+집합의 한 벡터를 집합의 다른 벡터의 선형결합으로 나타낼 수 있다는 것을 말한다.\
+기저의 개념이 나오는데, 효과적으로 $R^2$ 공간에서 나타낼 수 있는 벡터 2개의 느낌.\
+예를들어 3개의 방향성을 제시한다면 $R^3$공간, 즉 3개의 basis를 가진다 라고 하고 선형독립이라고 결론을 내릴 수 있다.
+
+## 선형종속(linear dependence)
+한 벡터를 여러개의 벡터로 표현 할 수 있다.\
+선형결합을 했을 때 $=0$이 된다면 이것은 선형종속이라고 이야기 한다.\
+단 $c_1, c_2$가 모두 0이라면, 이것은 선형독립이다.
+
+# 4 부분공간과 부분공간의 기저
+
+## 선형부분 공간
+선형 부분공간(linear subspace)\
+V subspace of $R^n$은 V는 영벡터를 포함하는 것을 의미한다. $\vec{X}$ is V=\;$c\vec{X}$ in V를 의미한다. vector a와 vector b가 V에 속하면 연산후의 결과도 V에 속한다.\
+closed under multiplecation\
+$R^2$ 공간에 대한 이해
+
+## 부분공간의 기저
+V = span($\vec{v_1}, ..., \vec{v_n}$) 일 때, 선형독립이다.\
+S is a basis for V\
+T is linearly dependent : T is not a basis for V\
+기저는 최소한의 공간이다. 어떠한 공간을 생성하는데 필요한 최소한의 벡터집합이라고 할 수 있다.\
+예를들어 S는 $R^2$를 생성하고 선형독립이라면, 집합S는 $R^2$의 기저라고 할 수 있다.\
+그렇다면 S가 $R^2$의 유일한 기저일까?\
+그것은 아니다. 무한개의 기저가 존재한다.\
+standard basis 집합 $T=\{\begin{bmatrix} 1\\ 0 \end{bmatrix}, \begin{bmatrix} 0\\ 1 \end{bmatrix}\}$
+
+# 5 벡터의 내적과 외적
+## 벡터의 내적과 벡터의 길이
+vector addition, scalar multiplication\
+Dot Product(벡터의 내적) : $\vec{a} \cdot \vec{b}$ : result(scalar)\
+vector length : definition($||\vec{a}||=\sqrt{a_1^2+...+a_n^2}$)\
+자기 자신의 내적 - vector length와 동일
+
+## 벡터 내적의 성질 증명
+$\vec{v} \cdot \vec{w}$와 $\vec{w} \cdot \vec{v}$ 동일\
+= communtation property(교환 법칙), 결합법칙, 분배법칙 성립\
+proof는 찾아보자
+
+## 코시-슈바르츠 부등식의 증명
+영벡터가 아닌 두 벡터가 존재한다.\
+$|\vec{x} \cdot \vec{y}| \le \||\vec{x}||\cdot||\vec{y}||$\
+$|\vec{x} \cdot \vec{y}| = \||\vec{x}||\cdot||\vec{y}||$ <=> $\vec{x}=c\vec{y}$\
+이 때에만 해당되는 데 이것을 코시-슈바르츠 부등식이라고 부른다. Cauchy–Schwarz inequality\
+이것은 선형대수학의 증명에 상당히 많이 사용된다.\
+
+
+
+## 벡터의 삼각부등식
+
+## 벡터 사이의 각 정의하기
+
+## 점과 법선벡터를 이용하여 R3에서 평면 정의하기
+
+## 벡터의 외적이란?
+
+## 증명 : 외적과 각의 사인값과의 관계
+
+## 내적과 외적의 비교/직관
+
+## 벡터의 삼중적의 확장
+
+## 평면방정식의 법선 벡터
+
+## 점과 평면 사이의 거리
+
+## 평면 사이의 거리
+
+
+
+
+# 6 가감법으로 연립방정식을 풀기 위한 행렬
+
+## 행 사다리꼴 행렬을 이용하여 3차 연립방정식과 4개의 변수 풀기
+
+## 행렬을 이용하여 선형계 풀기
+
+## 행 사다리꼴을 이용하여 선형계는 해가 없다는 것을 알아보기
+
+
+
+
+# 7 영공간과 열공간
+
+## 행렬 벡터의 곱
+
+## 행렬의 영공간이란?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
